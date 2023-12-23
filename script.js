@@ -35,3 +35,10 @@ function addHeroCard() {
 displayHeroes();
 
 document.getElementById('addButton').addEventListener('click', addHeroCard);
+
+document.addEventListener("keyup", function (e) {
+    if (e.keyCode === 13) {
+        addHeroCard();
+    }
+}
+)
