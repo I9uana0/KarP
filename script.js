@@ -117,3 +117,85 @@ form.addEventListener("submit", function (evt) {
             addHeroButton.textContent = "Оптравить";
         })
 });
+
+class Hero {
+    constructor(name, level, healthPoints, stats) {
+        this.name = name;
+        this.level = level;
+        this.healthPoints = healthPoints;
+        this.stats = stats;
+    }
+    displayHero() {
+        const heroInfo =
+            `Имя: ${this.name}` +
+            `\nУровень: ${this.level}` +
+            `\nЖизненные силы: ${this.healthPoints}` +
+            `\nСила: ${this.stats.str}` +
+            `\nИнтеллект: ${this.stats.int}` +
+            `\nЛовкость: ${this.stats.agi}`;
+
+        console.log(heroInfo);
+    }
+}
+
+class Knight extends Hero {
+    constructor(name, level, healthPoints, stats, isHorseTango, energy) {
+        super(name, level, healthPoints, stats);
+        this.isHorseTango = isHorseTango; // Может танцевать танго на коне
+        this.energy = energy; // Показатель уровня энергии героя
+    }
+
+    displayHero() {
+        super.displayHero();
+        console.log(`Энергия ${this.energy}`)
+
+        if (this.isHorseTango === 'true' || this.isHorseTango === true) {
+            console.log('Этот герой может танцевать танго на коне')
+        }
+    }
+}
+
+class Mage extends Hero {
+    constructor(name, level, healthPoints, stats, hasTectonicPotion, mana) {
+        super(name, level, healthPoints, stats);
+        this.hasTectonicPotion = hasTectonicPotion;
+        this.mana = mana;
+    }
+    displayHero() {
+        super.displayHero();
+        console.log(`Мана ${this.mana}`)
+
+        if (this.hasTectonicPotion === 'true' || this.hasTectonicPotion === true) {
+            console.log('Есть зелье для тектоника!');
+        }
+    }
+}
+
+let ASCIIsan = new Knight(
+    "Рыцарь Аски",
+    100,
+    100,
+    {
+        str: 100,
+        int: 30,
+        agi: 100
+    },
+    true,
+    100
+);
+
+let CSSchan = new Mage(
+    "Цэ-эс-эсочка",
+    100,
+    100,
+    {
+        str: 30,
+        int: 100,
+        agi: 100
+    },
+    true,
+    100
+);
+
+ASCIIsan.displayHero();
+CSSchan.displayHero();
