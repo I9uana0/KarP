@@ -1,30 +1,221 @@
-#heroesContainer {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Roboto Mono', monospace;
+
+    background-image: url("images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header {
+    background: #FFFFFF80;
+    backdrop-filter: blur(4px);
+}
+
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/*   Заголовок страницы   */
+.page-heading {
+    font-size: 48px;
+    text-align: center;
+    color: #FF54FD;
+}
+
+/*   Стили для формы   */
+
+.form-wrapper {
     display: flex;
-    justify-content: flex-start;
-    /* gap: 25px; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-input {
+    padding: 8px 16px 0;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+
+    font-size: 24px;
+    text-overflow: ellipsis;
+    font-family: 'Roboto Mono', monospace;
+    color: #6654FF;
+
+    background: #FFF;
+    box-shadow: 4px 4px 8px 0 #6654FF50 inset;
+}
+
+.form-input:focus {
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: #FF54FD60;
+}
+
+.form-parameters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.parameter-input {
+    max-width: 48%;
+}
+
+.form-button {
+    margin-top: 10px;
+    padding: 16px 0;
+    width: 100%;
+    font-size: 36px;
+    border-radius: 12px;
+    border: none;
+
+    font-weight: 700;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+    background: linear-gradient(93deg, #FF54FD 0%, #6654FF 100%);
+    box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+#errorText {
+    color: #FF5656;
+}
+
+/*   Стили для карточек   */
+
+.cards {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-wrapper {
+    max-width: 346px;
+    padding: 20px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(152deg, #FFE500 0%, #FF54FD 50.24%, #6654FF 100%);
 }
 
 .card {
-    background-color: rgb(255, 148, 148);
-    margin: 5px;
-    width: 100px;
+    width: 100%;
+    border-radius: 10px;
+
+    background: #FFFFFF80;
+    backdrop-filter: blur(4px);
+
+    overflow: hidden;
+
+}
+
+.card-title,
+.card-description {
+    padding: 10px;
+
+    color: #6654FF;
+}
+
+.card-title-text {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card-description-text {
+    font-weight: 400;
+    text-align: center;
+}
+
+.card-parameters {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.card-parameter {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border-radius: 5%;
 }
 
-h3 {
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card-parameter-title {
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
-.cardAddForm {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 5px;
+.card-parameter-value {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+/*   Медиазапросы   */
+
+@media screen and (max-width: 752px) {
+    .page-heading {
+        font-size: 32px;
+    }
+
+    .form-input {
+        font-size: 16px;
+    }
+
+    .form-button,
+    .card-title-text {
+        font-size: 24px;
+    }
+
+    .form-button {
+        margin-top: 6px;
+    }
+
+    .card-description {
+        font-size: 16px;
+    }
+
+    .card-parameter-value {
+        font-size: 18px;
+    }
+
+    .form,
+    .cards {
+        gap: 14px;
+    }
+
+    .cards {
+        margin-top: 14px;
+    }
+}
+
+@media screen and (max-width: 394px) {
+    .page-heading {
+        font-size: 24px;
+    }
 }
