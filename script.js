@@ -37,32 +37,32 @@ function renderCards(heroes) {
         // Создаём верстку карточки и вставляем значения характеристик персонажа
         const cardHtml = `
         <div class="card-wrapper">
-        <div class="card">
-        <div class="card-title">
-        <h2 class="card-title-text">${hero.title}</h2>
-        </div>
-        <div class="card-description">
-        <p class="card-description-text">${hero.description}</p>
-        <div class="card-parameters">
-        <div class="card-parameter">
-        <p class="card-parameter-title">str</p>
-        <p class="card-parameter-value">${hero.str}</p>
-        </div>
-        <div class="card-parameter">
-        <p class="card-parameter-title">agi</p>
-        <p class="card-parameter-value">${hero.agi}</p>
-        </div>
-        <div class="card-parameter">
-        <p class="card-parameter-title">hp</p>
-        <p class="card-parameter-value">${hero.hp}</p>
-        </div>
-        <div class="card-parameter">
-        <p class="card-parameter-title">int</p>
-        <p class="card-parameter-value">${hero.int}</p>
-        </div>
-        </div>
-        </div>
-        </div>
+            <div class="card">
+                <div class="card-title">
+                    <h2 class="card-title-text">${hero.title}</h2>
+                </div>
+                <div class="card-description">
+                    <p class="card-description-text">${hero.description}</p>
+                    <div class="card-parameters">
+                        <div class="card-parameter">
+                            <p class="card-parameter-title">str</p>
+                            <p class="card-parameter-value">${hero.str}</p>
+                        </div>
+                        <div class="card-parameter">
+                            <p class="card-parameter-title">agi</p>
+                            <p class="card-parameter-value">${hero.agi}</p>
+                        </div>
+                        <div class="card-parameter">
+                            <p class="card-parameter-title">hp</p>
+                            <p class="card-parameter-value">${hero.hp}</p>
+                        </div>
+                        <div class="card-parameter">
+                            <p class="card-parameter-title">int</p>
+                            <p class="card-parameter-value">${hero.int}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         `;
         // Добавляем вёрстку карточки в контейнер
